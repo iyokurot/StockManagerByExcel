@@ -1,0 +1,28 @@
+.sheet-name-area{
+    background-color: aquamarine;
+}
+
+.data-area{
+    background-color: aqua;
+}
+
+.sheet-name-area,
+.data-area {
+  padding: 2%;
+  border-radius: 10px
+}
+
+@media ( min-width : 100px ){
+    .half-separate {
+      display: -webkit-flex;
+      display: flex;
+    }
+  .sheet-name-area {
+    margin: 0 10px 0 0;
+  }
+}
+
+.sheet-name-button{
+    background-color:red;
+    width: 95px;
+}

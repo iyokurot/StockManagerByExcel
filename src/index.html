@@ -2,6 +2,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
     <title>在庫管理App</title>
 </head>
 
@@ -10,21 +11,27 @@
     Excelファイルを選択
 
     <button id="select-directory">ディレクトリ</button>
+    <span class="demo-response" id="selected-file"></span>
 
-    <div class="sheet-name-area">
-        <span class="demo-response" id="selected-file"></span>
-        <span id="sheet-name"></span>
+    <div class="half-separate">
+        <div class="sheet-name-area">
+            シート名一覧
+            <span id="sheet-name"></span>
+        </div>
+
+        <div class="data-area">
+            <select id="sheet-data-list" name="sheet-data-list" style="width:400px" size=10>
+                <!--
+                    <option value="1">単一選択しかできないセレクトボックス・表示する値1</option>
+                -->
+
+                <span class="sheet-data-res" id="sheet-in-data"></span>
+            </select>
+        </div>
     </div>
 
-    <div class="data-area">
-        <select id="list2" name="list2" size="5">
-            <option value="1">単一選択しかできないセレクトボックス・表示する値1</option>
-            <option value="2">単一選択しかできないセレクトボックス・表示する値2</option>
-            <option value="3">単一選択しかできないセレクトボックス・表示する値3</option>
-            <option value="4">単一選択しかできないセレクトボックス・表示する値4</option>
-            <option value="5">単一選択しかできないセレクトボックス・表示する値5</option>
-        </select>
-    </div>
+    分割外<br>
+    <button>sumple_button</button>
 </body>
 
 <script type="text/javascript">
