@@ -3,6 +3,7 @@
 }
 
 .data-area{
+  position: relative;
     background-color: aqua;
 }
 
@@ -10,6 +11,16 @@
 .data-area {
   padding: 2%;
   border-radius: 10px
+}
+
+#left-data span{
+  position: absolute;
+  bottom: 0;
+}
+
+
+.selected{
+  background:yellow;
 }
 
 @media ( min-width : 100px ){

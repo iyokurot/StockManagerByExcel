@@ -14,19 +14,35 @@
     <span class="demo-response" id="selected-file"></span>
 
     <div class="half-separate">
+        <!--左側-->
         <div class="sheet-name-area">
             シート名一覧
             <span id="sheet-name"></span>
         </div>
 
-        <div class="data-area">
+        <!--右側-->
+        <div id="left-data" class="data-area" style="height:300px; width:400px; overflow-y:auto;">
+            <!--
             <select id="sheet-data-list" name="sheet-data-list" style="width:400px" size=10>
-                <!--
                     <option value="1">単一選択しかできないセレクトボックス・表示する値1</option>
-                -->
-
                 <span class="sheet-data-res" id="sheet-in-data"></span>
             </select>
+            -->
+
+            <table id="sheet-data-list-table" name="sheet-data-list-table" border=1 height="10" width="390">
+                <tr>
+                    <th>名前</th>
+                    <th>個数</th>
+                </tr>
+            </table>
+            <div class="under_area">
+                <span>
+                    memo<input type="text" id="memo-area"><br>
+                    <button>-</button><input type="number" id="number-area"><button>+</button>
+                    <button>削除</button><button>更新</button>
+                </span>
+            </div>
+
         </div>
     </div>
 
