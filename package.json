@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "electron": "^4.0.3",
+    "nedb": "^1.8.0",
     "xlsx": "^0.14.1"
   }
 }
