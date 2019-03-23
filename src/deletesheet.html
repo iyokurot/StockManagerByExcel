@@ -1,0 +1,23 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/deletesheet.css">
+    <title>シート名削除</title>
+    <script type="text/javascript" src="./loadDB.js">
+    </script>
+</head>
+
+<body>
+    シート名削除<br>
+    <select id="delwin-list" name="delwin-list" size=1 style="width:100px"></select>
+    <button id="delwin-delete" onclick="delwingetdelete()">削除</button>
+</body>
+<script type="text/javascript">
+    require("./loadDB")
+</script>
+<script>
+    delwindowload()
+</script>
+
+</html>

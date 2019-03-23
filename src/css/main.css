@@ -1,3 +1,7 @@
+.top-setting{
+  float: right;
+}
+
 .sheet-name-area{
     background-color: aquamarine;
     position: relative;
@@ -41,6 +45,12 @@
     background: red;
   }
 
+.chat-data-area{
+  height: 65%;
+  background: lightgreen;
+  margin: 5px;
+}
+
 
 
 @media ( min-width : 100px ){
@@ -81,4 +91,8 @@
 
 #sheet-data-list-table{
   width: 100%;
+}
+
+#chatlist{
+  font-size: 70%;
 }

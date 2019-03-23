@@ -4,19 +4,22 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <title>在庫管理App</title>
-    <script type="text/javascript" src="./loadDB.js">
-    </script>
+
 </head>
 
 <body>
 
 
-    <h1>管理アプリケーション</h1>
-    Excelファイルを選択
 
-    <button id="select-directory">ディレクトリ</button>
-    <button id="db-load">db読み込み</button>
-    <button id="data-add">データ登録</button>
+    <img src="img/managerTop.png" width="300" height="80">
+
+    <div class="top-setting">
+        <button id="select-directory">ディレクトリ</button>
+        <button id="db-load">リロード</button>
+        <button id="sheet-delete">シート削除</button>
+        <button id="open-settings">設定</button>
+    </div>
+
 
     <span class="demo-response" id="selected-file"></span>
 
@@ -42,25 +45,26 @@
                 </div>
 
                 <!--右側-->
-                <div id="left-data" class="data-area" style="overflow-y:auto;">
-                    <!--
-            <select id="sheet-data-list" name="sheet-data-list" style="width:400px" size=10>
-                    <option value="1">単一選択しかできないセレクトボックス・表示する値1</option>
-                <span class="sheet-data-res" id="sheet-in-data"></span>
-            </select>
-            -->
+                <div id="left-data" class="data-area">
 
-                    <table id="sheet-data-list-table" name="sheet-data-list-table" border=1 height="10">
-                        <tr>
-                            <th>名前</th>
-                            <th>個数</th>
-                        </tr>
-                    </table>
+                    <div style="overflow-y:auto; height: 250px">
+                        <table id="sheet-data-list-table" name="sheet-data-list-table" border=1 height="10">
+                            <tr>
+                                <th>名前</th>
+                                <th>個数</th>
+                            </tr>
+                        </table>
+                    </div>
                     <div class="under_area">
                         <span>
-                            名前：<input type="text" id="name-post-area"><br>
-                            memo<input type="text" id="memo-area"><br>
-                            <button>-</button><input type="number" id="number-area"><button>+</button>
+                            名前：<input type="text" id="name-post-area" style="width: 100px;">
+                            個数：<button id="numminus">-</button>
+                            <input type="number" id="number-area" style="width:40px;" min="0">
+                            <button id="numplus">+</button>
+                            <br>
+                            memo：<input type="text" id="memo-area"><br>
+                            場所：<select id="data-option-sheetname" name="data-option-sheetname" size=1>
+                            </select>
                             <button id="delete_data">削除</button><button id="update_data">更新</button>
                         </span>
                     </div>
@@ -71,18 +75,26 @@
             <!--新しいデータ入力エリア-->
             <div class="newdata-add-area">
                 <div class="newdata-input-area" align="center">
-                    <select size=1>
-                        <option value="1">1枚目1階</option>
+                    <select id="newdata-option-sheetname" name="newdata-option-sheetname" size=1>
                     </select>
-                    <input type="text" placeholder="名前" style="width:100px">
-                    <input type="number" placeholder="0" style="width:40px">
-                    <input type="text" placeholder="メモ"><br>
+
+                    <input id="newdata-add-name" type="text" placeholder="名前" style="width:100px">
+                    <input id="newdata-add-num" type="number" placeholder="0" style="width:40px">
+                    <input id="newdata-add-memo" type="text" placeholder="メモ"><br>
                 </div>
-                <button>追加</button>
+                <button id="data-add">追加</button>
             </div>
         </div>
+
         <div class="chat-area">
-            text
+            チャット<button id="reload-chat-list">reload</button>
+            <div class="chat-data-area" id="chat-data-area" style="overflow-y:auto;">
+                <span id="chatlist"></span>
+            </div>
+
+            <input id="chat-post-name" type="text" style="width:80px" placeholder="名前">
+            <input id="chat-post-text" type="text" style="width:100%" placeholder="内容">
+            <button id="chat-post">投稿</button>
         </div>
     </div>
 
@@ -95,9 +107,8 @@
 <script type="text/javascript">
     require("./loadExcel")
     require("./loadDB")
+    require("./settingelse")
 </script>
-<script>
-    firstloadDB()
-</script>
+
 
 </html>

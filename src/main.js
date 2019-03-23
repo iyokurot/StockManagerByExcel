@@ -10,8 +10,11 @@ function createWindow() {
 
     // メインウィンドウに表示するURLを指定します
     // （今回はmain.jsと同じディレクトリのindex.html）
-    mainWindow.loadFile('index.html');
+    //mainWindow.loadFile('index.html');
+    mainWindow.loadURL(`file://` + __dirname + `/index.html`);
 
+
+    //mainWindow.webContents.openDevTools();
 
     // メインウィンドウが閉じられたときの処理
     mainWindow.on('closed', () => {
@@ -38,3 +41,5 @@ app.on('activate', () => {
         createWindow();
     }
 });
+
+

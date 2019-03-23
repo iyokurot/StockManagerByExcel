@@ -1,0 +1,112 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <title>在庫管理App</title>
+
+</head>
+
+<body>
+
+
+    <h1>管理アプリケーション</h1>
+    Excelファイルを選択
+
+    <button id="select-directory">ディレクトリ</button>
+    <button id="db-load">db読み込み</button>
+    <button id="sheet-delete">シート削除</button>
+
+
+    <span class="demo-response" id="selected-file"></span>
+
+    <div class="first-half-separate">
+        <div class="half-separate">
+            <div class="third-half-separate">
+                <!--左側-->
+                <div class="sheet-name-area">
+                    シート名一覧
+                    <div style="height:200px; overflow-y:auto;">
+                        <span id="sheet-name"></span>
+                    </div>
+
+                    <div id="sheetname-add" class="under_position">
+                        <span>
+                            <hr>
+                            シート名追加<br>
+                            <input type="text" id="sheetname-post-area" style="width:100px" placeholder="シート名"><br>
+                            <button id="sheet-name-addbutton" style="width:100px">追加</button>
+
+                        </span>
+                    </div>
+                </div>
+
+                <!--右側-->
+                <div id="left-data" class="data-area">
+
+                    <div style="overflow-y:auto; height: 250px">
+                        <table id="sheet-data-list-table" name="sheet-data-list-table" border=1 height="10">
+                            <tr>
+                                <th>名前</th>
+                                <th>個数</th>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="under_area">
+                        <span>
+                            名前：<input type="text" id="name-post-area" style="width: 100px;">
+                            個数：<button id="numminus">-</button>
+                            <input type="number" id="number-area" style="width:40px;" min="0">
+                            <button id="numplus">+</button>
+                            <br>
+                            memo：<input type="text" id="memo-area"><br>
+                            場所：<select id="data-option-sheetname" name="data-option-sheetname" size=1>
+                            </select>
+                            <button id="delete_data">削除</button><button id="update_data">更新</button>
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--新しいデータ入力エリア-->
+            <div class="newdata-add-area">
+                <div class="newdata-input-area" align="center">
+                    <select id="newdata-option-sheetname" name="newdata-option-sheetname" size=1>
+                    </select>
+
+                    <input id="newdata-add-name" type="text" placeholder="名前" style="width:100px">
+                    <input id="newdata-add-num" type="number" placeholder="0" style="width:40px">
+                    <input id="newdata-add-memo" type="text" placeholder="メモ"><br>
+                </div>
+                <button id="data-add">追加</button>
+            </div>
+        </div>
+
+        <div class="chat-area">
+            チャット<button id="reload-chat-list">reload</button>
+            <div class="chat-data-area" id="chat-data-area" style="overflow-y:auto;">
+                <span id="chatlist"></span>
+            </div>
+
+            <input id="chat-post-name" type="text" style="width:80px" placeholder="名前">
+            <input id="chat-post-text" type="text" style="width:100%" placeholder="内容">
+            <button id="chat-post">投稿</button>
+        </div>
+    </div>
+
+    分割外<br>
+    <button>sumple_button</button>
+
+
+</body>
+
+<script type="text/javascript">
+    require("./loadExcel")
+    require("./loadDB")
+</script>
+<script>
+    //firstloadDB()
+</script>
+
+</html>
