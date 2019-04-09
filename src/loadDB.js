@@ -404,6 +404,10 @@ function optionResetter(option) {
 
 //シート削除ボタン処理＆ウィンドウ起動
 sheetdelBtn.addEventListener('click', (event) => {
+    sheetdelwindowload()
+
+})
+function sheetdelwindowload() {
     let win = new BrowserWindow({ width: 200, height: 150 });
     win.loadURL(`file://` + __dirname + `/deletesheet.html`);
     //win.loadFile('deletesheet.html');
@@ -413,7 +417,7 @@ sheetdelBtn.addEventListener('click', (event) => {
         reloadDB()
     });
     win.show()
-})
+}
 
 
 function delwindowload() {
