@@ -1,0 +1,94 @@
+.sheet-name-area{
+    background-color: aquamarine;
+    position: relative;
+}
+
+.under-position{
+  position: relative;
+}
+
+#sheetname-add span{
+  position: absolute;
+  bottom: 0;
+}
+
+.data-area{
+  position: relative;
+    background-color: aqua;
+}
+
+.sheet-name-area,
+.data-area {
+  padding: 2%;
+  border-radius: 10px
+}
+
+#left-data span{
+  position: absolute;
+  bottom: 0;
+}
+
+
+.selected{
+  background:yellow;
+}
+.third-half-separate{
+  height: 350px;
+}
+
+  .newdata-add-area{
+    height: 100px;
+    background: red;
+  }
+
+.chat-data-area{
+  height: 65%;
+  background: lightgreen;
+  margin: 5px;
+}
+
+
+
+@media ( min-width : 100px ){
+    .first-half-separate {
+      display: -webkit-flex;
+      display: flex;
+    }
+    .half-separate{
+      width: 70%;
+    }
+    .chat-area{
+      width: 30%;
+      background: blueviolet;
+    }
+  }
+  
+
+@media ( min-width : 100px ){
+    .third-half-separate {
+      display: -webkit-flex;
+      display: flex;
+      background: greenyellow;
+    }
+  .sheet-name-area {
+    margin: 0 10px 0 0;
+    width: 25%;
+  }
+  .data-area{
+    margin: 0 10px 0 0;
+    width: 70%;
+  }
+}
+
+.sheet-name-button{
+    background-color:red;
+    width: 95px;
+}
+
+#sheet-data-list-table{
+  width: 100%;
+}
+
+#chatlist{
+  font-size: 70%;
+}
