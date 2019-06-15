@@ -1,5 +1,6 @@
 body{
   background-image: url("../img/check-back.jpeg");
+  font-size: 12px;
 }
 
 button{
@@ -13,6 +14,10 @@ button{
 
 textarea{
   resize: none;
+}
+
+select{
+  width: 100px;
 }
 
 .topicon{
@@ -90,20 +95,17 @@ textarea{
 }
 
 .itemHeader{
-  color: rgb(51, 51, 51);
-  font-family: 'Meiryo UI',sans-serif;
-  background-color: #7ED1E6;
-  padding: .1em;
-border: 3px solid rgb(26, 181, 219);
-border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;
-}
-.itemHeader:after {
-  background-color: #b6f0fc;
+  color: #6cb4e4;
+  text-align: center;
+  margin: 3px;
+  padding: 0.25em;
+  border-top: solid 2px #6cb4e4;
+  border-bottom: solid 2px #6cb4e4;
+  background: -webkit-repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#e9f4ff 3px, #e9f4ff 7px);
+  background: repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#e9f4ff 3px, #e9f4ff 7px);
+  
 }
 
-.newdata-input-area-left{
-  position: relative;
-}
 
 .itemHeadermin{
   color: rgb(51, 51, 51);
@@ -132,7 +134,7 @@ border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;
 
 #sheetname-add span{
   position: absolute;
-  bottom: 0;
+  bottom: 3px;
 }
 
 .data-area{
@@ -140,7 +142,8 @@ border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;
   /*background-color: aqua;*/
 }
 
-.sheet-name-area,
+.sheet-name-arealist,
+.tag-area,
 .data-area {
   padding: 2%;
   background-color: rgba(255, 255, 255, 0.5);
@@ -158,33 +161,36 @@ border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;
   background:yellow;
 }
 .third-half-separate{
-  height: 68%;
+  height: 100%;
 }
-
-  .newdata-add-area{
-    height: 60px;
-    background: red;
-    margin: 10px 10px 0 0;
-    padding: 2%;
-  background-color: rgba(255, 255, 255, 0.5);
-  border: 2px solid #7ED1E6;
-  border-radius: 10px; 
-
-  position: relative;
-  }
 
 .chat-area{
   padding: .5em;
   background-color: rgba(255, 255, 255, 0.5);
   border: 2px solid #7ED1E6;
   border-radius: 10px;
+  height: 96%;
 }
 
 
 .chat-data-area{
-  height: 58%;
+  height: 70%;
   background: lightgreen;
-  margin: 5px;
+  margin: 0 5px 5px 5px;
+  border-radius: 10px;
+}
+
+@media ( min-height : 400px ){
+    body {
+      flex-direction: column;
+    align-items: center;
+    }
+  .header {
+    height: 18%;
+  }
+  .first-half-separate{
+    height: 82%;
+  }
 }
 
 
@@ -195,10 +201,10 @@ border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;
       display: flex;
     }
     .half-separate{
-      width: 70%;
+      width: 75%;
     }
     .chat-area{
-      width: 30%;
+      width: 25%;
       /*background: blueviolet;*/
     }
   }
@@ -211,41 +217,41 @@ border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;
       /*background: greenyellow;*/
     }
   .sheet-name-area {
-    margin: 0 10px 0 0;
-    width: 25%;
+    margin: 0 0 0 0;
+    width: 420px;
   }
   .data-area{
     margin: 0 10px 0 0;
-    width: 70%;
+    width: 100%;
   }
 }
+
 @media ( min-width : 100px ){
-    .newdata-add-area {
+    .sheet-name-area {
       display: -webkit-flex;
       display: flex;
       /*background: greenyellow;*/
     }
-  .newdata-input-area {
+  .sheet-name-arealist {
     margin: 0 10px 0 0;
-    width: 85%;
+    width: 45%;
   }
-  #data-add{
-    width: 15%;
-  }
-}
-@media ( min-width : 100px ){
-    .newdata-input-area{
-      display: -webkit-flex;
-      display: flex;
-      /*background: greenyellow;*/
-    }
-  .newdata-input-area-left {
-    width: 60%;
-  }
-  #newdata-add-memo{
-    width: 40%;
+  .tag-area{
+    margin: 0 10px 0 0;
+    width: 45%;
   }
 }
+
+#keyword-input{
+  width: 80%;
+  margin: 5px;
+}
+
+#keyword-serch{
+  width: 10%;
+}
+
+
 
 .sheet-name-button{
     
@@ -267,22 +273,23 @@ border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;
   transform: translateY(2px);
 }
 
-#sheet-name-addbutton,#update_data,#data-add,#chat-post{
+#sheet-name-addbutton,#tag-name-addbutton,#update_data,#data-add,#chat-post,#keyword-serch{
   background-color: rgb(79, 96, 255);
   border: 2px solid rgb(79, 96, 255);
   color: #fff;
   line-height: 20px;
   margin: 1px;
 }
-#sheet-name-addbutton:hover,#update_data:hover,
-#data-add:hover,#chat-post:hover{
+#sheet-name-addbutton:hover,#tag-name-addbutton:hover,#update_data:hover,
+#data-add:hover,#chat-post:hover,#keyword-serch:hover{
   background-color: #fff;
   border-color: rgb(79, 96, 255);
   color: rgb(79, 96, 255);
 }
 
+
 #update_data{
-  width: 50px;
+  width: 46%;
 }
 
 #numminus{
@@ -337,7 +344,7 @@ border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;
   border-bottom: none;
 }
 #delete_data{
-  width: 50px;
+  width: 46%;
   background-color: rgb(255, 79, 79);
   border: 2px solid rgb(255, 79, 79);
   color: #fff;
@@ -407,6 +414,11 @@ border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;
           transform: rotate(-22.5deg);
 }
 
+#chat-title{
+  display: inline-block;
+  transform: translateY(-10px);
+}
+
 #refresh-icon{
   display: inline-block;
   transform: translateY(-10px) translateX(-10px);
@@ -430,11 +442,27 @@ border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;
   background: #668ad8;
 }
 
+
 #chatlist{
   font-size: 70%;
+  
+}
+#one-chat{
+  position: relative;
 }
 
-
+.chatuser{
+  font-size: 10px;
+  margin: 0 3px;
+  border-radius: 10px;
+  padding: 3px;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+  top: 8px;
+  color: rgb(46, 46, 46);
+  background-image: linear-gradient(45deg, rgb(111, 226, 255) 0%, #277bfa 100%);
+}
 
 .chatbutton {
   display: inline-block;
@@ -467,9 +495,6 @@ input:focus{
   border:solid 1px #EEA34A;
 }
 
-#newdata-add-name,
-#newdata-add-num,
-#newdata-option-sheetname,
 #sheetname-post-area,
 #chat-post-name,
 #chat-post-text{

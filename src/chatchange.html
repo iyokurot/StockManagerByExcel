@@ -2,21 +2,23 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="css/deletesheet.css">
+    <link rel="stylesheet" type="text/css" href="css/chatchange.css">
 
     <script type="text/javascript" src="./loadDB.js">
     </script>
 </head>
 
 <body>
-    チャットの変更もしくは削除<br>
+    <div class="chatchange-area">
+        <div class="itemHeadermin">チャットの変更もしくは削除</div><br>
 
-    投稿者：<span id="chatwin-name"></span><br>
-    投稿時間：<span id="chatwin-day"></span><br>
-    内容：
-    <input id="chatwin-text" type="text"><br>
-    <button id="chatwin-update" onclick="chatwinupdate()">変更</button>
-    <button id="chatwin-delete" onclick="chatwindelete()">削除</button>
+        投稿者：<span id="chatwin-name"></span><br>
+        投稿時間：<span id="chatwin-day"></span><br>
+        内容：
+        <input id="chatwin-text" type="text"><br>
+        <button id="chatwin-update" onclick="chatwinupdate()">変更</button>
+        <button id="chatwin-delete" onclick="chatwindelete()">削除</button>
+    </div>
 </body>
 
 <script>

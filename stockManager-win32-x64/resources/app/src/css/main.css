@@ -15,6 +15,10 @@ textarea{
   resize: none;
 }
 
+select{
+  width: 100px;
+}
+
 .topicon{
   animation: rotate-anime 5s linear infinite;
 }
@@ -90,20 +94,17 @@ textarea{
 }
 
 .itemHeader{
-  color: rgb(51, 51, 51);
-  font-family: 'Meiryo UI',sans-serif;
-  background-color: #7ED1E6;
-  padding: .1em;
-border: 3px solid rgb(26, 181, 219);
-border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;
-}
-.itemHeader:after {
-  background-color: #b6f0fc;
+  color: #6cb4e4;
+  text-align: center;
+  margin: 3px;
+  padding: 0.25em;
+  border-top: solid 2px #6cb4e4;
+  border-bottom: solid 2px #6cb4e4;
+  background: -webkit-repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#e9f4ff 3px, #e9f4ff 7px);
+  background: repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#e9f4ff 3px, #e9f4ff 7px);
+  
 }
 
-.newdata-input-area-left{
-  position: relative;
-}
 
 .itemHeadermin{
   color: rgb(51, 51, 51);
@@ -132,7 +133,7 @@ border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;
 
 #sheetname-add span{
   position: absolute;
-  bottom: 0;
+  bottom: 3px;
 }
 
 .data-area{
@@ -140,7 +141,8 @@ border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;
   /*background-color: aqua;*/
 }
 
-.sheet-name-area,
+.sheet-name-arealist,
+.tag-area,
 .data-area {
   padding: 2%;
   background-color: rgba(255, 255, 255, 0.5);
@@ -158,20 +160,8 @@ border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;
   background:yellow;
 }
 .third-half-separate{
-  height: 68%;
+  height: 80%;
 }
-
-  .newdata-add-area{
-    height: 60px;
-    background: red;
-    margin: 10px 10px 0 0;
-    padding: 2%;
-  background-color: rgba(255, 255, 255, 0.5);
-  border: 2px solid #7ED1E6;
-  border-radius: 10px; 
-
-  position: relative;
-  }
 
 .chat-area{
   padding: .5em;
@@ -182,7 +172,7 @@ border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;
 
 
 .chat-data-area{
-  height: 58%;
+  height: 70%;
   background: lightgreen;
   margin: 5px;
 }
@@ -195,10 +185,11 @@ border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;
       display: flex;
     }
     .half-separate{
-      width: 70%;
+      width: 75%;
     }
     .chat-area{
-      width: 30%;
+      width: 25%;
+      height: 80%;
       /*background: blueviolet;*/
     }
   }
@@ -212,41 +203,29 @@ border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;
     }
   .sheet-name-area {
     margin: 0 10px 0 0;
-    width: 25%;
+    width: 40%;
   }
   .data-area{
     margin: 0 10px 0 0;
-    width: 70%;
-  }
-}
-@media ( min-width : 100px ){
-    .newdata-add-area {
-      display: -webkit-flex;
-      display: flex;
-      /*background: greenyellow;*/
-    }
-  .newdata-input-area {
-    margin: 0 10px 0 0;
-    width: 85%;
-  }
-  #data-add{
-    width: 15%;
-  }
-}
-@media ( min-width : 100px ){
-    .newdata-input-area{
-      display: -webkit-flex;
-      display: flex;
-      /*background: greenyellow;*/
-    }
-  .newdata-input-area-left {
-    width: 60%;
-  }
-  #newdata-add-memo{
-    width: 40%;
+    width: 55%;
   }
 }
 
+@media ( min-width : 100px ){
+    .sheet-name-area {
+      display: -webkit-flex;
+      display: flex;
+      /*background: greenyellow;*/
+    }
+  .sheet-name-arealist {
+    margin: 0 10px 0 0;
+    width: 45%;
+  }
+  .tag-area{
+    margin: 0 10px 0 0;
+    width: 45%;
+  }
+}
 .sheet-name-button{
     
     width: 95px;
@@ -267,19 +246,20 @@ border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;
   transform: translateY(2px);
 }
 
-#sheet-name-addbutton,#update_data,#data-add,#chat-post{
+#sheet-name-addbutton,#tag-name-addbutton,#update_data,#data-add,#chat-post{
   background-color: rgb(79, 96, 255);
   border: 2px solid rgb(79, 96, 255);
   color: #fff;
   line-height: 20px;
   margin: 1px;
 }
-#sheet-name-addbutton:hover,#update_data:hover,
+#sheet-name-addbutton:hover,#tag-name-addbutton:hover,#update_data:hover,
 #data-add:hover,#chat-post:hover{
   background-color: #fff;
   border-color: rgb(79, 96, 255);
   color: rgb(79, 96, 255);
 }
+
 
 #update_data{
   width: 50px;
@@ -467,9 +447,6 @@ input:focus{
   border:solid 1px #EEA34A;
 }
 
-#newdata-add-name,
-#newdata-add-num,
-#newdata-option-sheetname,
 #sheetname-post-area,
 #chat-post-name,
 #chat-post-text{

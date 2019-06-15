@@ -1,23 +1,31 @@
 body{
   background-image: url("../img/check-back.jpeg");
 }
+
+input{
+  width: 80%;
+}
 select{
-  width: 95%;
-  margin: 0 2px 2px 2px;
+  width: 80%;
+}
+textarea{
+  resize: none;
+  width: 90%;
 }
 
-.deletesheet-area{
-  margin: 10px 10px 0 0;
+.newdata-add-area{
+    margin: 10px 10px 0 0;
     padding: 2%;
   background-color: rgba(255, 255, 255, 0.5);
   border: 2px solid #7ED1E6;
   border-radius: 10px; 
-}
+  
+  }
 
 .itemHeadermin{
   color: #6cb4e4;
   text-align: center;
-  margin: 2px;
+  margin: 3px;
   padding: 0.25em;
   border-top: solid 2px #6cb4e4;
   border-bottom: solid 2px #6cb4e4;
@@ -25,17 +33,17 @@ select{
   background: repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#e9f4ff 3px, #e9f4ff 7px);
 }
 
-#delwin-delete{
-  width: 95%;
-  background-color: rgb(255, 79, 79);
-  border: 2px solid rgb(255, 79, 79);
-  color: #fff;
-  line-height: 20px;
-  margin: 1px 3px;
-}
 
-#delwin-delete:hover{
-  background-color: #fff;
-  border-color: rgb(255, 79, 79);
-  color: rgb(255, 79, 79);
-}
+  #data-add{
+    width: 90%;
+    background-color: rgb(79, 96, 255);
+    border: 2px solid rgb(79, 96, 255);
+    color: #fff;
+    line-height: 20px;
+    margin: 3px;
+  }
+  #data-add:hover{
+      background-color: #fff;
+  border-color: rgb(79, 96, 255);
+  color: rgb(79, 96, 255);
+  }

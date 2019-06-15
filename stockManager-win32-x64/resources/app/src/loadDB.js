@@ -5,14 +5,17 @@ const remote = require('electron').remote;
 
 const selectdbBtn = document.getElementById('db-load')
 const sheetdelBtn = document.getElementById('sheet-delete')
+const dataaddBtn = document.getElementById('new-dataadd')
 const selectSheetBtn = document.getElementById('sheet-name')
 const sheetAddBtn = document.getElementById('sheet-name-addbutton')
+
+const selectTagBtn = document.getElementById('tags');
+const tagAddBtn = document.getElementById('tag-name-addbutton')
 
 const plusBtn = document.getElementById('numplus')
 const minusBtn = document.getElementById('numminus')
 const deleteBtn = document.getElementById('delete_data')
 const updateBtn = document.getElementById('update_data')
-const dataAddBtn = document.getElementById('data-add')
 
 const chatpostBtn = document.getElementById('chat-post')
 const chatBtn = document.getElementById('chatlist')
@@ -35,7 +38,14 @@ let datalistdb = new Database({
     filename: 'src/db/datalist.db',
     autoload: true
 })
-datalistdb.loadDatabase()
+datalistdb.loadDatabase();
+
+//tagDB
+let tagdb = new Database({
+    filename: 'src/db/taglist.db',
+    autoload: true
+})
+tagdb.loadDatabase();
 
 //チャットDBの取得
 let chatDB = new Database({
@@ -70,6 +80,12 @@ function firstloadDB() {
         //autoload: true
     })
     datalistdb.loadDatabase()
+    //tagDB
+    tagdb = new Database({
+        filename: 'src/db/taglist.db',
+        //autoload: true
+    })
+    tagdb.loadDatabase();
 
     sheetnamedb.find({}).sort({ name: 1 }).exec(function (err, docs) {
         var sheetnames = ''
@@ -77,17 +93,10 @@ function firstloadDB() {
 
         //データ追加セレクトボックス
         var dataoption = document.getElementsByName("data-option-sheetname")
-        var span = document.getElementsByName("newdata-option-sheetname")
 
         for (n in docs) {
             sheetnames += "<br><button class=sheet-name-button id=" + docs[n].name + " >" + docs[n].name + "</button>"
-
             //リスト(option)に代入
-            var option_add = document.createElement("option")
-            option_add.setAttribute("value", docs[n].name)
-            option_add.innerHTML = docs[n].name
-            span[0].appendChild(option_add)
-
             var option_addt = document.createElement("option")
             option_addt.setAttribute("value", docs[n].name)
             option_addt.innerHTML = docs[n].name
@@ -95,14 +104,34 @@ function firstloadDB() {
         }
         document.getElementById('sheet-name').innerHTML = sheetnames
 
+    })
+
+    tagdb.find({}).sort({ name: 1 }).exec(function (err, docs) {
+        var sheetnames = ''
+        sheetnames += "<br><button class=sheet-name-button id=all >すべて</button>"
+
+        //データ追加セレクトボックス
+        var dataoption = document.getElementsByName("data-option-tag")
+
+        for (n in docs) {
+            sheetnames += "<br><button class=sheet-name-button id=" + docs[n].name + " >" + docs[n].name + "</button>"
+            //リスト(option)に代入
+
+            var option_addt = document.createElement("option")
+            option_addt.setAttribute("value", docs[n].name)
+            option_addt.innerHTML = docs[n].name
+            dataoption[0].appendChild(option_addt)
+        }
+        document.getElementById('tags').innerHTML = sheetnames
 
     })
+
     loadchats()
 }
 
 function reloadDB() {
     optionResetter(document.getElementById("data-option-sheetname"))
-    optionResetter(document.getElementById("newdata-option-sheetname"))
+    optionResetter(document.getElementById("data-option-tag"))
     firstloadDB()
 }
 function loadchats() {
@@ -148,37 +177,6 @@ sheetAddBtn.addEventListener('click', (event) => {
         reloadDB()
         document.getElementById("sheetname-post-area").value = ""
     })
-
-})
-
-//データ追加ボタン
-dataAddBtn.addEventListener('click', (event) => {
-    var sheetoption = document.getElementById("newdata-option-sheetname")
-    var sheet = sheetoption.value
-    //var val = sheetoption.options[sheet]
-    var name = document.getElementById("newdata-add-name").value
-    var num = document.getElementById("newdata-add-num").value
-    var memo = document.getElementById("newdata-add-memo").value
-
-    if (name == "" || num == "" || memo == "") {
-        dialog.showErrorBox("追加できませんでした", "空欄があります")
-        return
-    }
-
-    var doc = {
-        name: name,
-        num: num,
-        memo: memo,
-        place: sheet
-    }
-    datalistdb.insert(doc)
-
-    messageDialogprint("追加しました", "")
-    document.getElementById("newdata-add-name").value = ""
-    document.getElementById("newdata-add-num").value = ""
-    document.getElementById("newdata-add-memo").value = ""
-    //テーブル更新
-    reloadalldataTable()
 })
 
 
@@ -194,8 +192,42 @@ selectSheetBtn.addEventListener('click', (event) => {
             insertTable(docs)
         })
     }
+})
 
+//タグ名追加ボタン
+tagAddBtn.addEventListener('click', (event) => {
+    var newtagname = document.getElementById("tag-post-area")
+    if (newtagname.value == "") {
+        dialog.showErrorBox("追加できませんでした", "シート名が空白です")
+        return
+    }
+    //sheetDBに追加 *同名がないか確認
+    tagdb.count({ name: newtagname.value }, function (err, count) {
+        if (count != 0 || newtagname.value == "すべて") {
+            dialog.showErrorBox("追加できませんでした", "シート名が重複しています")
+            return
+        }
+        var newtag = {
+            name: newtagname.value
+        }
+        tagdb.insert(newtag)
+        messageDialogprint("シート名を追加しました", "新しいシート名：" + newtagname.value)
+        reloadDB()
+        document.getElementById("tag-post-area").value = ""
+    })
+})
 
+//tagボタン
+selectTagBtn.addEventListener('click', (event) => {
+    //タグボタンのidによって切り替え
+    var click_sheet = event.target.id
+    if ("all" == click_sheet) {
+        reloadalldataTable()
+    } else {
+        datalistdb.find({ tag: click_sheet }, function (err, docs) {
+            insertTable(docs)
+        })
+    }
 })
 
 function insertTable(docs) {
@@ -403,7 +435,7 @@ function optionResetter(option) {
     }
 }
 
-
+/*
 //シート削除ボタン処理＆ウィンドウ起動
 sheetdelBtn.addEventListener('click', (event) => {
     sheetdelwindowload()
@@ -413,6 +445,22 @@ function sheetdelwindowload() {
     let win = new BrowserWindow({ width: 200, height: 150 });
     win.loadURL(`file://` + __dirname + `/deletesheet.html`);
     //win.loadFile('deletesheet.html');
+    win.on('closed', () => {
+        win = null;
+        //削除のち再読み込み更新
+        reloadDB()
+    });
+    win.show()
+}
+
+*/
+dataaddBtn.addEventListener('click', (event) => {
+    dataaddwindowload();
+
+})
+function dataaddwindowload() {
+    let win = new BrowserWindow({ width: 400, height: 600 });
+    win.loadURL(`file://` + __dirname + `/adddata.html`);
     win.on('closed', () => {
         win = null;
         //削除のち再読み込み更新
@@ -454,14 +502,13 @@ function delwingetdelete() {
     if (delok == 0) {
         //削除
         sheetnamedb.remove({ name: sheet }, {}, function (err, numRemoved) {
-            datalistdb.remove({ place: sheet }, {}, function (err, numRemoved) {
-            })
-            //optionリセット
-            optionResetter(sheetoption)
-            delwindowload()
-            messageDialogprint("完了", "削除しました")
         })
-
+        datalistdb.remove({ place: sheet }, {}, function (err, numRemoved) {
+        })
+        //optionリセット
+        optionResetter(sheetoption)
+        delwindowload()
+        messageDialogprint("完了", "削除しました")
     }
     else if (delok == 1) {
         dialog.showErrorBox("削除エラー", "キャンセルされました")

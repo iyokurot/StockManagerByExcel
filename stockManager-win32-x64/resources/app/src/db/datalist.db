@@ -1,18 +1,27 @@
-{"name":"sample","num":"5","memo":"memoメモsampleさんぷる","place":"2","_id":"55n0kIkYc94THcqX"}
-{"name":"あいうえおかきくけこさしすせそたちつてとなにぬねの","num":"1","memo":"memomemo","place":"2階","_id":"64MtxRwvpASSF4Hx"}
-{"name":"お菓子","num":"97","memo":" 無限","place":"２枚目５階","_id":"A6pmfUMQbcfFDRpf"}
-{"name":"Aqours sunshine","num":"10","memo":"ヨハネ","place":"1階","_id":"E3Ww9lIOi3mxxNXY"}
-{"name":"tester","num":"5","memo":"testmessage","place":"3階","_id":"MDMnGN0A6o2FIRsd"}
-{"name":"Aqours","num":" 8","memo":" undefined","place":"1枚目４階","_id":"MeFWKIPUFaanM4Ki"}
-{"name":"Aqours","num":" 8","memo":" undefined","place":"1枚目４階","_id":"NAguRvytebsTFFZt"}
-{"name":"EXQアリス","num":" 3","memo":" 半箱","place":"1枚目４階","_id":"NMfGloJwccabs9Qh"}
-{"name":"ぬいぐるみ","num":" 1","memo":" undefined","place":"２枚目５階","_id":"NdE7UHTIBrB1AmwQ"}
-{"name":"忍","num":" 4","memo":" キャラ欠け","place":"２枚目５階","_id":"PIoa9tSlT3v2rEX0"}
-{"name":"ぬいぐるみ","num":" 1","memo":" undefined","place":"２枚目５階","_id":"PPZ8euFu75lujYSq"}
-{"name":"EXQアリスaa","num":"3","memo":" 半箱","place":"1枚目４階","_id":"aj3bGkmGTDelJ5ov"}
-{"name":"商品１","num":" 2","memo":" 特になし","place":"1枚目４階","_id":"fs12nAp2Z9W6Qfpi"}
-{"name":"忍","num":"4","memo":"","place":"２枚目５階","_id":"hNKAC6yWKRHndGbL"}
-{"name":"EXQアリスbb","num":"3","memo":" 半箱","place":"1枚目４階","_id":"k02MsI4tPZmAJsdY"}
-{"name":"商品１","num":" 2","memo":" 特になし","place":"1枚目４階","_id":"nyS8TlSfGJwXaOL4"}
-{"name":"ぬいぐるみ","num":" 1","memo":" undefined","place":"２枚目５階","_id":"rUm9DJDck997zyW0"}
-{"name":"お菓子","num":" 100","memo":" 無限","place":"２枚目５階","_id":"wV5chz8HeTdVg8J8"}
+{"name":"ペン","num":" 4","memo":" 全１０種類","tag":"一般","place":"1枚目４階","_id":"1N1il2X22Yj86soj"}
+{"name":"商品１","num":" 2","memo":" 特になし","tag":"一般","place":"1枚目４階","_id":"5I1uFPxl60Oxd6lo"}
+{"name":"忍","num":" 4","memo":" キャラ欠け","tag":"フィギュア","place":"２枚目５階","_id":"64y26MiEfSsZ0339"}
+{"name":"大型お菓子","num":" 8","memo":" undefined","tag":"食べ物","place":"1枚目４階","_id":"JOh8Wgjqr7KVF6H1"}
+{"name":"ラミネート","num":" 20","memo":" undefined","tag":"事務","place":"事務所","_id":"Jfxr7obdg0nombUk"}
+{"name":"大型お菓子","num":" 8","memo":" undefined","tag":"食べ物","place":"1枚目４階","_id":"LDgzYzYdLKswu8ym"}
+{"name":"お菓子","num":" 100","memo":" 無限に管理","tag":"食べ物","place":"２枚目５階","_id":"LFV9RnOKl6vEkCtL"}
+{"name":"時計","num":" 1","memo":" 種類に欠けあり","tag":"一般","place":"1枚目４階","_id":"NEcCPrNQ2MzbZG6i"}
+{"name":"フィギュアver.3","num":" 2","memo":" undefined","tag":"フィギュア","place":"２枚目５階","_id":"P3j8k5HYeDYYQZei"}
+{"name":"EXQ","num":" 3","memo":" 半箱","tag":"フィギュア","place":"1枚目４階","_id":"ROw79T5c3DaZZ8uZ"}
+{"name":"ペン","num":" 4","memo":" 全１０種類","tag":"一般","place":"1枚目４階","_id":"WaDLplo6ZssUUYHL"}
+{"name":"忍","num":" 4","memo":" キャラ欠け","tag":"フィギュア","place":"２枚目５階","_id":"XBUhI1tpYs53M1AV"}
+{"name":"ラミネート","num":" 20","memo":" undefined","tag":"事務","place":"事務所","_id":"aBe3Ot6FaAIrO0nD"}
+{"name":"ぬいぐるみ","num":" 1","memo":" undefined","tag":"ぬいぐるみ","place":"２枚目５階","_id":"aKkEGO4E3zh8AOVl"}
+{"name":"用紙B4","num":" 6","memo":" セット数、３以下発注","tag":"事務","place":"事務所","_id":"cc73UveEjnPqlZlL"}
+{"name":"ぬいぐるみ","num":" 1","memo":" undefined","tag":"ぬいぐるみ","place":"２枚目５階","_id":"cfFg01seVMeFKqfN"}
+{"name":"用紙B4","num":" 6","memo":" セット数、３以下発注","tag":"事務","place":"事務所","_id":"eylN3mhN1Fyj1HiB"}
+{"name":"用紙A3","num":" 10","memo":" セット数、３以下発注","tag":"事務","place":"事務所","_id":"fnnPXT2xctcHhTOx"}
+{"name":"お菓子","num":" 100","memo":" 無限に管理","tag":"食べ物","place":"２枚目５階","_id":"ft6uH8BSIf2KkF00"}
+{"name":"ヒプマイ","num":"10","memo":"キャラああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ","tag":"乙女","place":"２枚目５階","_id":"jKVbakqV2vOcX3Ug"}
+{"name":"包装紙","num":" 10","memo":" ５以下で発注","tag":"事務","place":"事務所","_id":"jmgIyoWqZ4CrXxup"}
+{"name":"商品１","num":" 2","memo":" 特になし","tag":"一般","place":"1枚目４階","_id":"kt4Naa4rnYOSUskd"}
+{"name":"時計","num":" 1","memo":" 種類に欠けあり","tag":"一般","place":"1枚目４階","_id":"nEW0dtOhDVd9ZWsU"}
+{"name":"フィギュアver.3","num":" 2","memo":" undefined","tag":"フィギュア","place":"２枚目５階","_id":"pWbRDIoWVxVcHepc"}
+{"name":"包装紙","num":" 10","memo":" ５以下で発注","tag":"事務","place":"事務所","_id":"u05TiS2VPOgwizrK"}
+{"name":"用紙A3","num":" 10","memo":" セット数、３以下発注","tag":"事務","place":"事務所","_id":"uFTW6s0dUNQsxcLP"}
+{"name":"EXQ","num":" 3","memo":" 半箱","tag":"フィギュア","place":"1枚目４階","_id":"xR4XLBN9eoaoda69"}

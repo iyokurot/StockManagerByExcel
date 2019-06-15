@@ -11,43 +11,61 @@
 
 
 
-    <img src="img/icon_star_clear.png" class="topicon" width="80" height="80">
-    <span class="title">ManagerAPP</span>
+    <div class="header">
+        <img src="img/icon_star_clear.png" class="topicon" width="80" height="80">
+        <span class="title">ManagerAPP</span>
 
-    <div class="top-setting">
-        <button id="serch-data">検索</button>
-        <button id="db-load">リロード</button>
-        <button id="sheet-delete">場所削除</button>
-        <button id="open-settings">設定</button>
+        <div class="top-setting">
+            <button id="db-load">リロード</button>
+            <button id="new-dataadd">新規追加</button>
+            <button id="open-settings">設定</button>
+        </div>
     </div>
 
-
-    <span class="demo-response" id="selected-file"></span>
 
     <div class="first-half-separate">
         <div class="half-separate">
             <div class="third-half-separate">
                 <!--左側-->
                 <div class="sheet-name-area">
-                    <span class="itemHeader">場所一覧</span>
-                    <div style="height:70%; overflow-y:auto;">
-                        <span id="sheet-name"></span>
+                    <div class="sheet-name-arealist">
+                        <span class="itemHeader">場所一覧</span>
+                        <div style="height:70%; overflow-y:auto;">
+                            <span id="sheet-name"></span>
+                        </div>
+
+                        <div id="sheetname-add" class="under_position">
+                            <span>
+                                <div class="itemHeader">場所追加</div>
+                                <input type="text" id="sheetname-post-area" style="width:90px" placeholder="シート名"><br>
+                                <button id="sheet-name-addbutton" style="width:90px">追加</button>
+
+                            </span>
+                        </div>
+                    </div>
+                    <div class="tag-area">
+                        <span class="itemHeader">タグ一覧</span>
+                        <div style="height:70%; overflow-y:auto;">
+                            <span id="tags"></span>
+                        </div>
+                        <div id="sheetname-add" class="under_position">
+                            <span>
+                                <div class="itemHeader">タグ追加</div>
+                                <input type="text" id="tag-post-area" style="width:90px" placeholder="タグ名"><br>
+                                <button id="tag-name-addbutton" style="width:90px">追加</button>
+
+                            </span>
+                        </div>
                     </div>
 
-                    <div id="sheetname-add" class="under_position">
-                        <span>
-                            <div class="itemHeader">場所追加</div>
-                            <input type="text" id="sheetname-post-area" style="width:100px" placeholder="シート名"><br>
-                            <button id="sheet-name-addbutton" style="width:100px">追加</button>
-
-                        </span>
-                    </div>
                 </div>
 
                 <!--右側-->
                 <div id="left-data" class="data-area">
+                    <input type="text" id="keyword-input" placeholder="名前検索"></input>
+                    <button id="keyword-serch">検索</button>
 
-                    <div style="overflow-y:auto; height: 75%">
+                    <div style="overflow-y:auto; height: 70%">
                         <table id="sheet-data-list-table" name="sheet-data-list-table" border=1 height="10">
                             <tr>
                                 <th>名前</th>
@@ -65,6 +83,8 @@
                             メモ：<input type="text" id="memo-area" style="width:80%"><br>
                             場所：<select id="data-option-sheetname" name="data-option-sheetname" size=1>
                             </select>
+                            タグ：<select id="data-option-tag" name="data-option-tag" size=1>
+                            </select><br>
                             <button id="delete_data">削除</button><button id="update_data">更新</button>
                         </span>
                     </div>
@@ -72,30 +92,10 @@
                 </div>
             </div>
 
-            <!--新しいデータ入力エリア-->
-            <div class="newdata-add-area">
-                <div class="newdata-input-area">
-                    <div class="newdata-input-area-left">
-                        <div class="itemHeadermin">新規追加</div>
-                        <span>
-                            <br>
-                            名前<input id="newdata-add-name" type="text" placeholder="名前" style="width:50%">
-                            個数<input id="newdata-add-num" type="number" placeholder="0" style="width:40px">
-                            <br>場所<select id="newdata-option-sheetname" name="newdata-option-sheetname" size=1>
-                            </select>
-                        </span>
-                    </div>
-                    <!--
-                    <input id="newdata-add-memo" type="text" placeholder="メモ">
-                    -->
-                    <textarea id="newdata-add-memo" type="text" placeholder="メモ"></textarea>
-                </div>
-                <button id="data-add">追加</button>
-            </div>
         </div>
 
         <div class="chat-area">
-            <span class="itemHeader">チャット</span>
+            <span class="itemHeader" id="chat-title">チャット</span>
             <button id="reload-chat-list"><span class="refresh-icon" id="refresh-icon"></span></button>
             <div class="chat-data-area" id="chat-data-area" style="overflow-y:auto;">
                 <span id="chatlist"></span>
