@@ -5,11 +5,9 @@ const { app, BrowserWindow } = require('electron');
 let mainWindow;
 
 function createWindow() {
-    // メインウィンドウを作成します
-    mainWindow = new BrowserWindow({ width: 800, height: 600 });
+    mainWindow = new BrowserWindow({ width: 840, height: 600 });
 
-    // メインウィンドウに表示するURLを指定します
-    // （今回はmain.jsと同じディレクトリのindex.html）
+    // メインウィンドウに表示するURL
     //mainWindow.loadFile('index.html');
     mainWindow.loadURL(`file://` + __dirname + `/index.html`);
 
@@ -33,7 +31,7 @@ app.on('window-all-closed', () => {
         app.quit();
     }
 });
-// アプリケーションがアクティブになった時の処理(Macだと、Dockがクリックされた時）
+// アプリケーションがアクティブになった時の処理
 app.on('activate', () => {
 
     // メインウィンドウが消えている場合は再度メインウィンドウを作成する

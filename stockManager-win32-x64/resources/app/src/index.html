@@ -11,18 +11,17 @@
 
 
 
-    <img src="img/icon_star_clear.png" class="topicon" width="80" height="80">
-    <span class="title">ManagerAPP</span>
+    <div class="header">
+        <img src="img/icon_star_clear.png" class="topicon" width="80" height="80">
+        <span class="title">ManagerAPP</span>
 
-    <div class="top-setting">
-        <button id="serch-data">検索</button>
-        <button id="db-load">リロード</button>
-        <button id="new-dataadd">新規追加</button>
-        <button id="open-settings">設定</button>
+        <div class="top-setting">
+            <button id="db-load">リロード</button>
+            <button id="new-dataadd">新規追加</button>
+            <button id="open-settings">設定</button>
+        </div>
     </div>
 
-
-    <span class="demo-response" id="selected-file"></span>
 
     <div class="first-half-separate">
         <div class="half-separate">
@@ -63,8 +62,10 @@
 
                 <!--右側-->
                 <div id="left-data" class="data-area">
+                    <input type="text" id="keyword-input" placeholder="名前検索"></input>
+                    <button id="keyword-serch">検索</button>
 
-                    <div style="overflow-y:auto; height: 75%">
+                    <div style="overflow-y:auto; height: 70%">
                         <table id="sheet-data-list-table" name="sheet-data-list-table" border=1 height="10">
                             <tr>
                                 <th>名前</th>
@@ -94,7 +95,7 @@
         </div>
 
         <div class="chat-area">
-            <span class="itemHeader">チャット</span>
+            <span class="itemHeader" id="chat-title">チャット</span>
             <button id="reload-chat-list"><span class="refresh-icon" id="refresh-icon"></span></button>
             <div class="chat-data-area" id="chat-data-area" style="overflow-y:auto;">
                 <span id="chatlist"></span>

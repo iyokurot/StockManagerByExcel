@@ -57,7 +57,7 @@ sheetdelBtn.addEventListener('click', (event) => {
     sheetdelwindowload()
 })
 function sheetdelwindowload() {
-    let win = new BrowserWindow({ width: 200, height: 150 });
+    let win = new BrowserWindow({ width: 200, height: 200 });
     win.loadURL(`file://` + __dirname + `/deletesheet.html`);
     //win.loadFile('deletesheet.html');
     win.on('closed', () => {

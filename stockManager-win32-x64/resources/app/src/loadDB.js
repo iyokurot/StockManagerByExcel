@@ -4,7 +4,7 @@ const remote = require('electron').remote;
 
 
 const selectdbBtn = document.getElementById('db-load')
-const sheetdelBtn = document.getElementById('sheet-delete')
+//const sheetdelBtn = document.getElementById('sheet-delete')
 const dataaddBtn = document.getElementById('new-dataadd')
 const selectSheetBtn = document.getElementById('sheet-name')
 const sheetAddBtn = document.getElementById('sheet-name-addbutton')
@@ -12,6 +12,7 @@ const sheetAddBtn = document.getElementById('sheet-name-addbutton')
 const selectTagBtn = document.getElementById('tags');
 const tagAddBtn = document.getElementById('tag-name-addbutton')
 
+const serchBtn = document.getElementById('keyword-serch')
 const plusBtn = document.getElementById('numplus')
 const minusBtn = document.getElementById('numminus')
 const deleteBtn = document.getElementById('delete_data')
@@ -133,6 +134,7 @@ function reloadDB() {
     optionResetter(document.getElementById("data-option-sheetname"))
     optionResetter(document.getElementById("data-option-tag"))
     firstloadDB()
+    document.getElementById("keyword-input").value = ""
 }
 function loadchats() {
     //チャットDBの取得
@@ -144,7 +146,8 @@ function loadchats() {
     var chs = ""
     chatDB.find({}).sort({ date: 1 }).exec(function (err, docs) {
         for (n in docs) {
-            chs += "<button id=" + docs[n]._id + " class=chatbutton>" + docs[n].name + "@" + docs[n].text + "</button><br>"
+            chs += "<div class=one-chat><span class=chatuser>" + docs[n].name + "</span><br>"
+            chs += "<button id=" + docs[n]._id + " class=chatbutton>" + docs[n].text + "</button><br></div>"
         }
         document.getElementById('chatlist').innerHTML = chs
 
@@ -230,6 +233,21 @@ selectTagBtn.addEventListener('click', (event) => {
     }
 })
 
+//検索ボタン
+serchBtn.addEventListener('click', (event) => {
+    var keyword = document.getElementById("keyword-input");
+    if (keyword.value == "") {
+        return
+    } else {
+        var query = ({ name: new RegExp(".*" + keyword.value + ".*", "i") })
+        datalistdb.find(query, function (err, docs) {
+
+            insertTable(docs)
+        })
+    }
+})
+
+
 function insertTable(docs) {
     //table初期化
     var data_table = document.getElementById("sheet-data-list-table")
@@ -263,6 +281,7 @@ function table_click(row, data) {
     var numarea = document.getElementById("number-area")
     numarea.value = parseInt(data.num)
     document.getElementById("data-option-sheetname").value = data.place
+    document.getElementById("data-option-tag").value = data.tag
     lastselecteddata = data
 }
 
@@ -373,14 +392,14 @@ chatBtn.addEventListener('click', (event) => {
         var win = remote.getCurrentWindow();
         var options = {
             type: 'info',
-            buttons: ['はい', 'いいえ'],
+            buttons: ['いいえ', 'はい'],
             title: '削除変更',
             message: '削除もしくは変更しますか？'
         };
 
         var changeable = dialog.showMessageBox(win, options)
 
-        if (changeable == 0) {
+        if (changeable == 1) {
             //削除＆変更ウィンドウ起動
             chatchangewindow(docs[0])
 
@@ -435,31 +454,13 @@ function optionResetter(option) {
     }
 }
 
-/*
-//シート削除ボタン処理＆ウィンドウ起動
-sheetdelBtn.addEventListener('click', (event) => {
-    sheetdelwindowload()
 
-})
-function sheetdelwindowload() {
-    let win = new BrowserWindow({ width: 200, height: 150 });
-    win.loadURL(`file://` + __dirname + `/deletesheet.html`);
-    //win.loadFile('deletesheet.html');
-    win.on('closed', () => {
-        win = null;
-        //削除のち再読み込み更新
-        reloadDB()
-    });
-    win.show()
-}
-
-*/
 dataaddBtn.addEventListener('click', (event) => {
     dataaddwindowload();
 
 })
 function dataaddwindowload() {
-    let win = new BrowserWindow({ width: 400, height: 600 });
+    let win = new BrowserWindow({ width: 300, height: 350 });
     win.loadURL(`file://` + __dirname + `/adddata.html`);
     win.on('closed', () => {
         win = null;
@@ -493,13 +494,13 @@ function delwingetdelete() {
     var win = remote.getCurrentWindow();
     var options = {
         type: 'info',
-        buttons: ['はい', 'いいえ'],
+        buttons: ['いいえ', 'はい'],
         title: '削除確認',
         message: 'シートのデータも同時に削除されますがよろしいですか？'
     };
 
     var delok = dialog.showMessageBox(win, options)
-    if (delok == 0) {
+    if (delok == 1) {
         //削除
         sheetnamedb.remove({ name: sheet }, {}, function (err, numRemoved) {
         })
@@ -510,7 +511,7 @@ function delwingetdelete() {
         delwindowload()
         messageDialogprint("完了", "削除しました")
     }
-    else if (delok == 1) {
+    else if (delok == 0) {
         dialog.showErrorBox("削除エラー", "キャンセルされました")
     }
 }

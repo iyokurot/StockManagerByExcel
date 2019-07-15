@@ -2,7 +2,6 @@
 {"name":"商品１","num":" 2","memo":" 特になし","tag":"一般","place":"1枚目４階","_id":"5I1uFPxl60Oxd6lo"}
 {"name":"忍","num":" 4","memo":" キャラ欠け","tag":"フィギュア","place":"２枚目５階","_id":"64y26MiEfSsZ0339"}
 {"name":"大型お菓子","num":" 8","memo":" undefined","tag":"食べ物","place":"1枚目４階","_id":"JOh8Wgjqr7KVF6H1"}
-{"name":"ラミネート","num":" 20","memo":" undefined","tag":"事務","place":"事務所","_id":"Jfxr7obdg0nombUk"}
 {"name":"大型お菓子","num":" 8","memo":" undefined","tag":"食べ物","place":"1枚目４階","_id":"LDgzYzYdLKswu8ym"}
 {"name":"お菓子","num":" 100","memo":" 無限に管理","tag":"食べ物","place":"２枚目５階","_id":"LFV9RnOKl6vEkCtL"}
 {"name":"時計","num":" 1","memo":" 種類に欠けあり","tag":"一般","place":"1枚目４階","_id":"NEcCPrNQ2MzbZG6i"}
@@ -10,7 +9,6 @@
 {"name":"EXQ","num":" 3","memo":" 半箱","tag":"フィギュア","place":"1枚目４階","_id":"ROw79T5c3DaZZ8uZ"}
 {"name":"ペン","num":" 4","memo":" 全１０種類","tag":"一般","place":"1枚目４階","_id":"WaDLplo6ZssUUYHL"}
 {"name":"忍","num":" 4","memo":" キャラ欠け","tag":"フィギュア","place":"２枚目５階","_id":"XBUhI1tpYs53M1AV"}
-{"name":"ラミネート","num":" 20","memo":" undefined","tag":"事務","place":"事務所","_id":"aBe3Ot6FaAIrO0nD"}
 {"name":"ぬいぐるみ","num":" 1","memo":" undefined","tag":"ぬいぐるみ","place":"２枚目５階","_id":"aKkEGO4E3zh8AOVl"}
 {"name":"用紙B4","num":" 6","memo":" セット数、３以下発注","tag":"事務","place":"事務所","_id":"cc73UveEjnPqlZlL"}
 {"name":"ぬいぐるみ","num":" 1","memo":" undefined","tag":"ぬいぐるみ","place":"２枚目５階","_id":"cfFg01seVMeFKqfN"}

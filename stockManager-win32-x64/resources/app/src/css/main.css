@@ -1,5 +1,6 @@
 body{
   background-image: url("../img/check-back.jpeg");
+  font-size: 12px;
 }
 
 button{
@@ -160,7 +161,7 @@ border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;
   background:yellow;
 }
 .third-half-separate{
-  height: 80%;
+  height: 100%;
 }
 
 .chat-area{
@@ -168,13 +169,28 @@ border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;
   background-color: rgba(255, 255, 255, 0.5);
   border: 2px solid #7ED1E6;
   border-radius: 10px;
+  height: 96%;
 }
 
 
 .chat-data-area{
   height: 70%;
   background: lightgreen;
-  margin: 5px;
+  margin: 0 5px 5px 5px;
+  border-radius: 10px;
+}
+
+@media ( min-height : 400px ){
+    body {
+      flex-direction: column;
+    align-items: center;
+    }
+  .header {
+    height: 18%;
+  }
+  .first-half-separate{
+    height: 82%;
+  }
 }
 
 
@@ -189,7 +205,6 @@ border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;
     }
     .chat-area{
       width: 25%;
-      height: 80%;
       /*background: blueviolet;*/
     }
   }
@@ -202,12 +217,12 @@ border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;
       /*background: greenyellow;*/
     }
   .sheet-name-area {
-    margin: 0 10px 0 0;
-    width: 40%;
+    margin: 0 0 0 0;
+    width: 420px;
   }
   .data-area{
     margin: 0 10px 0 0;
-    width: 55%;
+    width: 100%;
   }
 }
 
@@ -226,6 +241,18 @@ border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;
     width: 45%;
   }
 }
+
+#keyword-input{
+  width: 80%;
+  margin: 5px;
+}
+
+#keyword-serch{
+  width: 10%;
+}
+
+
+
 .sheet-name-button{
     
     width: 95px;
@@ -246,7 +273,7 @@ border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;
   transform: translateY(2px);
 }
 
-#sheet-name-addbutton,#tag-name-addbutton,#update_data,#data-add,#chat-post{
+#sheet-name-addbutton,#tag-name-addbutton,#update_data,#data-add,#chat-post,#keyword-serch{
   background-color: rgb(79, 96, 255);
   border: 2px solid rgb(79, 96, 255);
   color: #fff;
@@ -254,7 +281,7 @@ border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;
   margin: 1px;
 }
 #sheet-name-addbutton:hover,#tag-name-addbutton:hover,#update_data:hover,
-#data-add:hover,#chat-post:hover{
+#data-add:hover,#chat-post:hover,#keyword-serch:hover{
   background-color: #fff;
   border-color: rgb(79, 96, 255);
   color: rgb(79, 96, 255);
@@ -262,7 +289,7 @@ border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;
 
 
 #update_data{
-  width: 50px;
+  width: 46%;
 }
 
 #numminus{
@@ -317,7 +344,7 @@ border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;
   border-bottom: none;
 }
 #delete_data{
-  width: 50px;
+  width: 46%;
   background-color: rgb(255, 79, 79);
   border: 2px solid rgb(255, 79, 79);
   color: #fff;
@@ -387,6 +414,11 @@ border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;
           transform: rotate(-22.5deg);
 }
 
+#chat-title{
+  display: inline-block;
+  transform: translateY(-10px);
+}
+
 #refresh-icon{
   display: inline-block;
   transform: translateY(-10px) translateX(-10px);
@@ -410,11 +442,27 @@ border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;
   background: #668ad8;
 }
 
+
 #chatlist{
   font-size: 70%;
+  
+}
+#one-chat{
+  position: relative;
 }
 
-
+.chatuser{
+  font-size: 10px;
+  margin: 0 3px;
+  border-radius: 10px;
+  padding: 3px;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+  top: 8px;
+  color: rgb(46, 46, 46);
+  background-image: linear-gradient(45deg, rgb(111, 226, 255) 0%, #277bfa 100%);
+}
 
 .chatbutton {
   display: inline-block;

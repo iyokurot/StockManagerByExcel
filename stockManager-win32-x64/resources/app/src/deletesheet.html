@@ -9,9 +9,11 @@
 </head>
 
 <body>
-    シート名削除<br>
-    <select id="delwin-list" name="delwin-list" size=1 style="width:100px"></select>
-    <button id="delwin-delete" onclick="delwingetdelete()">削除</button>
+    <div class="deletesheet-area">
+        <div class="itemHeadermin">シート名削除</div><br>
+        <select id="delwin-list" name="delwin-list" size=1></select>
+        <button id="delwin-delete" onclick="delwingetdelete()">削除</button>
+    </div>
 </body>
 <script type="text/javascript">
     require("./loadDB")
