@@ -12,7 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "asar": "^1.0.0",
-    "electron": "^4.0.3",
+    "electron": "^18.3.7",
     "nedb": "^1.8.0",
     "xlsx": "^0.14.1"
   },
